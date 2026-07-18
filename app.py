@@ -9,8 +9,14 @@ from scipy import stats
 st.set_page_config(page_title="Space Weather Analysis", layout="wide")
 
 st.title("Solar Flare & Particle Flux Analysis")
-st.write("This dashboard analyzes the correlation between solar flare intensity and high-energy particle flux.")
- 
+#st.write("This dashboard analyzes the correlation between solar flare intensity and high-energy particle flux.")
+st.write("""Hypothesis: \n
+Given that solar flares serve as primary indicators of intense solar activity, 
+then flare intensity (soft X-ray flux) should exhibit a positive, non-linear correlation 
+with increased particle flux (protons and electrons) in the solar wind, 
+driven by the shared energetic processes of solar eruptions rather than a simple linear relationship.""")
+
+
 @st.cache_data
 def load_and_process_data():
     # GOES proton data at earth
@@ -72,9 +78,9 @@ axes.set_xlabel("Proton Flux [pfu]")
 axes.set_ylabel("Flare Intensity [W/m2]")
 axes.set_yscale('log')
 axes.set_xscale('log')
-axes.set_ylim(1e-9,5e-4)
+axes.set_ylim(1e-10,5e-5)
 axes.grid(True, which="major", ls="-", alpha=0.5)
-axes.legend(loc='lower center', ncol=2,fontsize=12)
+axes.legend(loc='lower center', ncol=2,fontsize=9)
 
 st.pyplot(fig)
 st.subheader("Statistical Analysis")
