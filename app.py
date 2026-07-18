@@ -74,7 +74,7 @@ axes.scatter(df_show['p1_flux_ic'], df_show['xl'],
              color='palevioletred', alpha=0.75, s=20, label='GOES & Flare fluxes', edgecolor='none')
 
 axes.set_title('SXR Flare Intensity vs. High-Energy Proton & Electron Flux')
-axes.set_xlabel("Proton Flux [pfu]")
+axes.set_xlabel("Particle Flux [pfu]")
 axes.set_ylabel("Flare Intensity [W/m2]")
 axes.set_yscale('log')
 axes.set_xscale('log')
@@ -90,14 +90,14 @@ col1, col2 = st.columns(2)
 # GOES Metrics
 p_goes, s_goes = get_correlation(df_show, 'p1_flux_ic', 'xl')
 with col1:
-    st.markdown("**GOES Proton Correlation**")
+    st.markdown("**GOES Proton and SXR Correlation**")
     st.metric("Pearson", f"{p_goes[0]:.4f}")
     st.metric("Spearman", f"{s_goes[0]:.4f}")
 
 # EPHIN Metrics
 p_ephin, s_ephin = get_correlation(df_show, 'E14.13_15.85', 'xl')
 with col2:
-    st.markdown("**EPHIN Electron Correlation**")
+    st.markdown("**EPHIN Electron and SXR Correlation**")
     st.metric("Pearson", f"{p_ephin[0]:.4f}")
     st.metric("Spearman", f"{s_ephin[0]:.4f}")
 
