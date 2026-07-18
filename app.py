@@ -59,13 +59,13 @@ def get_correlation(df, col_x, col_y):
 df_show = load_and_process_data()
 st.subheader("Visualizing Particle Flux vs. Flare Intensity")
 
-fig, axes = plt.subplots(figsize=(7, 4))
+fig, axes = plt.subplots(figsize=(5, 2.5))
 sns.set_theme(style="ticks", context="notebook")
 
 axes.scatter(df_show['E14.13_15.85'], df_show['xl'], 
              color='orange', alpha=0.5, s=20, label='EPHIN & Flare fluxes', edgecolor='none')
 axes.scatter(df_show['p1_flux_ic'], df_show['xl'], 
-             color='palevioletred', alpha=0.5, s=20, label='GOES & Flare fluxes', edgecolor='none')
+             color='palevioletred', alpha=0.75, s=20, label='GOES & Flare fluxes', edgecolor='none')
 
 axes.set_title('SXR Flare Intensity vs. High-Energy Proton & Electron Flux')
 axes.set_xlabel("Proton Flux [pfu]")
