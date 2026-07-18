@@ -99,3 +99,4 @@ st.divider()
 st.markdown("""
 ### Summary of Findings
 This Python pipeline analyzes multi-instrument space weather data, comparing GOES proton measurements, EPHIN electron data at L1, and solar flare signatures (GOES soft X-rays). The objective was to determine if solar flare intensity correlates with increased particle (proton and electron) flux. Applying both Pearson (linear) and Spearman (monotonic) analyses from Q1, we find correlation coefficients near zero for both datasets. The scatter plot confirms this, showing no discernible linear or monotonic relationship between flare intensity and the recorded particle fluxes. This indicates that flare intensity, in isolation and at the provided time-scales, does not serve as a direct proxy for real-time particle flux measurements. Time lag between events, instrumentation sensitivity, data preparation, and even background noise could all be contributing to the lack of correlation found. 
+            """
